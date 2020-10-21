@@ -25,26 +25,26 @@
  *  http://csrc.nist.gov/publications/fips/fips197/fips-197.pdf
  */
 
-#include "../../include/common.h"
+#include "common.h"
 
 #if defined(MBEDTLS_AES_C)
 
 #include <string.h>
 
-#include "../../include/aes.h"
-#include "../../include/platform.h"
-#include "../../include/platform_util.h"
-#include "../../include/error.h"
+#include "aes.h"
+#include "platform.h"
+#include "platform_util.h"
+#include "error.h"
 #if defined(MBEDTLS_PADLOCK_C)
-#include "../../include/padlock.h"
+#include "padlock.h"
 #endif
 #if defined(MBEDTLS_AESNI_C)
-#include "../../include/aesni.h"
+#include "aesni.h"
 #endif
 
 #if defined(MBEDTLS_SELF_TEST)
 #if defined(MBEDTLS_PLATFORM_C)
-#include "../../include/platform.h"
+#include "platform.h"
 #else
 #include <stdio.h>
 #endif /* MBEDTLS_PLATFORM_C */

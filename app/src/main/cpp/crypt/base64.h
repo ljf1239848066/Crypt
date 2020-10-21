@@ -30,7 +30,7 @@
 #include MBEDTLS_CONFIG_FILE
 #endif
 
-#include <stddef.h>
+#include "../../../../../../../../Documents/Android/AndroidNDK/android-ndk-r19c/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/include/stddef.h"
 
 #define MBEDTLS_ERR_BASE64_BUFFER_TOO_SMALL               -0x002A  /**< Output buffer too small. */
 #define MBEDTLS_ERR_BASE64_INVALID_CHARACTER              -0x002C  /**< Invalid character in input. */

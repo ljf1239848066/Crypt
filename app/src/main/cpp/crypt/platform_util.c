@@ -28,11 +28,10 @@
 #define _POSIX_C_SOURCE 200112L
 #endif
 
-#include "../include/common.h"
+#include "common.h"
 
-#include "../include/platform_util.h"
-#include "../include/platform.h"
-#include "../include/threading.h"
+#include "platform_util.h"
+#include "platform.h"
 
 #include <stddef.h>
 #include <string.h>
@@ -83,24 +82,6 @@ void mbedtls_platform_zeroize( void *buf, size_t len )
 #include <unistd.h>
 #endif /* !_WIN32 && (unix || __unix || __unix__ ||
         * (__APPLE__ && __MACH__)) */
-
-#if !( ( defined(_POSIX_VERSION) && _POSIX_VERSION >= 200809L ) ||     \
-       ( defined(_POSIX_THREAD_SAFE_FUNCTIONS ) &&                     \
-         _POSIX_THREAD_SAFE_FUNCTIONS >= 20112L ) )
-/*
- * This is a convenience shorthand macro to avoid checking the long
- * preprocessor conditions above. Ideally, we could expose this macro in
- * platform_util.h and simply use it in platform_util.c, threading.c and
- * threading.h. However, this macro is not part of the Mbed TLS public API, so
- * we keep it private by only defining it in this file
- */
-#if ! ( defined(_WIN32) && !defined(EFIX64) && !defined(EFI32) )
-#define PLATFORM_UTIL_USE_GMTIME
-#endif /* ! ( defined(_WIN32) && !defined(EFIX64) && !defined(EFI32) ) */
-
-#endif /* !( ( defined(_POSIX_VERSION) && _POSIX_VERSION >= 200809L ) ||     \
-             ( defined(_POSIX_THREAD_SAFE_FUNCTIONS ) &&                     \
-                _POSIX_THREAD_SAFE_FUNCTIONS >= 20112L ) ) */
 
 struct tm *mbedtls_platform_gmtime_r( const mbedtls_time_t *tt,
                                       struct tm *tm_buf )

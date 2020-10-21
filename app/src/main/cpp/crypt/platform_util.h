@@ -31,10 +31,10 @@
 #include MBEDTLS_CONFIG_FILE
 #endif
 
-#include <stddef.h>
+#include "../../../../../../../../Documents/Android/AndroidNDK/android-ndk-r19c/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/include/stddef.h"
 #if defined(MBEDTLS_HAVE_TIME_DATE)
 #include "platform_time.h"
-#include <time.h>
+#include "../../../../../../../../Documents/Android/AndroidNDK/android-ndk-r19c/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/time.h"
 #endif /* MBEDTLS_HAVE_TIME_DATE */
 
 #ifdef __cplusplus

@@ -50,7 +50,6 @@
  * Used in:
  *      library/aria.c
  *      library/timing.c
- *      include/mbedtls/bn_mul.h
  *
  * Required by:
  *      MBEDTLS_AESNI_C
@@ -65,10 +64,6 @@
  *
  * The platform lacks support for double-width integer division (64-bit
  * division on a 32-bit platform, 128-bit division on a 64-bit platform).
- *
- * Used in:
- *      include/mbedtls/bignum.h
- *      library/bignum.c
  *
  * The bignum code uses double-width division to speed up some operations.
  * Double-width division is often implemented in software that needs to

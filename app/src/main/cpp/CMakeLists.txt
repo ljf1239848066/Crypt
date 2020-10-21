@@ -10,24 +10,10 @@ set(PROJECT_NAME crypt)
 set(crypt
         gtlog.cpp
         crypt.cpp
-        src/base64/base64.c
-        src/aes/aes.c
-        src/aes/aesni.c
-        src/platform_util.c
-        src/blowfish/blowfish.c
-        src/sha/sha1.c
-        src/sha/sha256.c
-        src/sha/sha512.c
-        src/cjson/cJSON.c
-        src/cjson/cJSON_Utils.c
-        src/rsa/asn1parse.c
-        src/sha/md.c
-        src/sha/md5.c
-        src/rsa/oid.c
-        src/rsa/ripemd160.c
-        src/rsa/rsa.c
-        src/rsa/rsa_internal.c
-        src/rsa/bignum.c
+        crypt/base64.c
+        crypt/aes.c
+        crypt/aesni.c
+        crypt/platform_util.c
         )
 
 # Creates and names a library, sets it as either STATIC
@@ -46,8 +32,8 @@ add_library( # Sets the name of the library.
         ${crypt})
 
 include_directories(
-        src/main/cpp
-        src/main/cpp/include
+        crypt/main/cpp
+        crypt/main/cpp/crypt
 )
 
 # Searches for a specified prebuilt library and stores the path as a

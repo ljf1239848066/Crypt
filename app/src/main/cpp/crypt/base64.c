@@ -19,18 +19,18 @@
  *  This file is part of mbed TLS (https://tls.mbed.org)
  */
 
-#include "../../include/common.h"
+#include "common.h"
 
 #if defined(MBEDTLS_BASE64_C)
 
-#include "../../include/base64.h"
+#include "base64.h"
 
 #include <stdint.h>
 
 #if defined(MBEDTLS_SELF_TEST)
 #include <string.h>
 #if defined(MBEDTLS_PLATFORM_C)
-#include "../../include/platform.h"
+#include "platform.h"
 #else
 #include <stdio.h>
 #endif /* MBEDTLS_PLATFORM_C */
