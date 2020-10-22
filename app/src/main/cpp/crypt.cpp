@@ -3,7 +3,10 @@
 
 #include "crypt/aes.h"
 
+#include "crypt/Rijndael.h"
+
 #include <string.h>
+#include <cstring>
 
 #define JNIREG_CLASS "com/lxzh123/crypt/Native"// 指定要注册的类
 
@@ -97,6 +100,13 @@ init(JNIEnv *env, jclass clazz, jstring jvalue, jstring jpassword) {
     int vlen = strlen(value);
     int klen = strlen(password);
     LOGD("[+] init vlen:%d klen:%d", vlen, klen);
+
+    std::string sval =value;
+    std::string skey = password;
+    std::string ba = encryt(sval, skey);
+    std::string o = decryt(ba, skey);
+    LOGD("[+] init ba:%s o:%s", ba.c_str(), o.c_str());
+
 
     unsigned char * value1 = NULL;
     char2byte((unsigned char *)value, vlen, &value1);

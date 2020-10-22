@@ -40,6 +40,18 @@ public class MainActivity extends AppCompatActivity {
             LogUtils.d("devalue4:" + StringUtils.bytesToHexString(value4));
         }
 
+        {
+            byte[] value5 = Base64Utils.encode1(AesUtils.encrypt1(content0.getBytes(), password));
+            String content5 = new String(value5);
+            LogUtils.d("content5:" + content5);
+            LogUtils.d("envalue5:" + StringUtils.bytesToHexString(value5));
+
+            byte[] value6 = AesUtils.decrypt2(Base64Utils.decode(value5), password);
+            String content6 = new String(value6);
+            LogUtils.d("content6:" + content6);
+            LogUtils.d("devalue6:" + StringUtils.bytesToHexString(value6));
+        }
+
         Native.init(content0, password);
     }
 }
