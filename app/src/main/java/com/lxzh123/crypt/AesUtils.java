@@ -42,6 +42,32 @@ public class AesUtils {
         return null;
     }
 
+    public static byte[] encrypt2(byte[] content, String password) {
+        try {
+            IvParameterSpec ivParameterSpec = new IvParameterSpec(IV);
+            SecretKeySpec key = new SecretKeySpec(password.getBytes(), "AES");
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");// 创建密码器
+            cipher.init(Cipher.ENCRYPT_MODE, key, ivParameterSpec);// 初始化为加密模式的密码器
+            return cipher.doFinal(content);// 加密
+        } catch (Exception e) {
+            WarnHandler.ignoreException(e);
+        }
+        return null;
+    }
+
+    public static byte[] decrypt2(byte[] byteContent, String password) {
+        try {
+            IvParameterSpec ivParameterSpec = new IvParameterSpec(IV);
+            SecretKeySpec key = new SecretKeySpec(password.getBytes(), "AES");
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");// 创建密码器
+            cipher.init(Cipher.DECRYPT_MODE, key, ivParameterSpec);// 初始化为解密模式的密码器
+            return cipher.doFinal(byteContent);
+        } catch (Exception e) {
+            WarnHandler.ignoreException(e);
+        }
+        return null;
+    }
+
     /**
      * AES加密字符串
      *

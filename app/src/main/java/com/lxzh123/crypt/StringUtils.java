@@ -83,7 +83,7 @@ public class StringUtils {
         StringBuffer buffer = new StringBuffer();
         int len = array.length;
         for (int i = 0; i < len; i++) {
-            buffer.append(String.format("%2x", array[i]));
+            buffer.append(String.format("%02x", array[i]));
         }
         return buffer.toString();
     }

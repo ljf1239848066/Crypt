@@ -14,6 +14,7 @@ set(crypt
         crypt/aes.c
         crypt/aesni.c
         crypt/platform_util.c
+        crypt/Rijndael.cpp
         )
 
 # Creates and names a library, sets it as either STATIC

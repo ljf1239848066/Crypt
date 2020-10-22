@@ -68,9 +68,9 @@ extern "C" {
 #endif
 
 #if !defined(MBEDTLS_PLATFORM_NO_STD_FUNCTIONS)
-#include "../../../../../../../../Documents/Android/AndroidNDK/android-ndk-r19c/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/stdio.h"
-#include "../../../../../../../../Documents/Android/AndroidNDK/android-ndk-r19c/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/local/include/stdlib.h"
-#include "../../../../../../../../Documents/Android/AndroidNDK/android-ndk-r19c/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/time.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #if !defined(MBEDTLS_PLATFORM_STD_SNPRINTF)
 #if defined(MBEDTLS_PLATFORM_HAS_NON_CONFORMING_SNPRINTF)
 #define MBEDTLS_PLATFORM_STD_SNPRINTF   mbedtls_platform_win32_snprintf /**< The default \c snprintf function to use.  */
